@@ -1,0 +1,2 @@
+# Finovax
+Trading strategy
