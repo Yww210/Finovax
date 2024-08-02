@@ -10,8 +10,8 @@ import backtrader as bt
 # Create a Stratey
 class SMACrossover(bt.Strategy):
     params = (
-        ('short_period', 10),
-        ('long_period', 30),
+        ('short_period', 10),   # Default value
+        ('long_period', 30),    # Default value
     )
 
     def __init__(self):
@@ -32,8 +32,8 @@ if __name__ == '__main__':
     # Create a cerebro entity
     cerebro = bt.Cerebro()
 
-    # Add a strategy
-    cerebro.addstrategy(SMACrossover)
+    # Add a strategy with custom parameters
+    cerebro.addstrategy(SMACrossover, short_period=20, long_period=50)
 
     # Get historical data from CSV
     data_path = os.path.join(os.getcwd(), 'AAPL.csv')
